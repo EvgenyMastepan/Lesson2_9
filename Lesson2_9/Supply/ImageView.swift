@@ -10,7 +10,7 @@ import UIKit
 class ImageView: UIImageView {
     init(round: CGFloat = 0) {
         super.init(frame: .zero)
-        self.contentMode = .scaleAspectFit
+        self.contentMode = .scaleAspectFill
         self.clipsToBounds = true
         self.layer.cornerRadius = round
         self.translatesAutoresizingMaskIntoConstraints = false

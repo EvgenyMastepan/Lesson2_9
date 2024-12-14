@@ -24,7 +24,7 @@ class CellView: UICollectionViewCell {
         clipsToBounds = true
         backgroundColor = .systemGray6
         contentView.addSubviews(userImage, userNameLabel, mainImage, dateLabel, titulTextLabel, bigTextLabel)
-        setConstraints()
+        
     }
     private func setConstraints() {
         let imageRatio = mainImage.image?.getRatio() ?? 1 // Принудительно ставлю коэффициент 1
@@ -63,7 +63,7 @@ class CellView: UICollectionViewCell {
             bigTextLabel.topAnchor.constraint(equalTo: titulTextLabel.bottomAnchor),
             bigTextLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ourIndent),
             bigTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ourIndent),
-            bigTextLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: ourIndent)
+            bigTextLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -ourIndent)
             
             
         ])
@@ -76,6 +76,7 @@ class CellView: UICollectionViewCell {
         dateLabel.text = data.date
         titulTextLabel.text = data.titulText
         bigTextLabel.text = data.bigText
+        setConstraints()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
