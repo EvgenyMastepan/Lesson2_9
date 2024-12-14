@@ -27,7 +27,7 @@ class CellView: UICollectionViewCell {
         setConstraints()
     }
     private func setConstraints() {
-        let imageRatio = mainImage.image?.getRatio() ?? 0
+        let imageRatio = mainImage.image?.getRatio() ?? 1 // Принудительно ставлю коэффициент 1
         print (imageRatio)
         let imageHeight =  imageRatio * screenWidth
         print (screenWidth)
